@@ -1,6 +1,14 @@
 import { TradingPageProps } from "@orderly.network/trading";
-import { FooterProps, MainNavWidgetProps } from "@orderly.network/ui-scaffold";
+import { FooterProps, MainNavWidgetProps, BottomNavProps } from "@orderly.network/ui-scaffold";
 import { AppLogos } from "@orderly.network/react-app";
+import {
+  LeaderboardActiveIcon,
+  LeaderboardInactiveIcon,
+  PortfolioActiveIcon,
+  PortfolioInactiveIcon,
+  TradingActiveIcon,
+  TradingInactiveIcon,
+} from '@orderly.network/ui';
 import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/orderly";
 
 export type OrderlyConfig = {
@@ -10,6 +18,7 @@ export type OrderlyConfig = {
   scaffold: {
     mainNavProps: MainNavWidgetProps;
     footerProps: FooterProps;
+    bottomNavProps: BottomNavProps;
   };
   tradingPage: {
     tradingViewConfig: TradingPageProps["tradingViewConfig"];
@@ -19,6 +28,13 @@ export type OrderlyConfig = {
 
 const config: OrderlyConfig = {
   scaffold: {
+    bottomNavProps: {
+      mainMenus: [
+        { name: "Trading", href: "/", activeIcon: <TradingActiveIcon />, inactiveIcon: <TradingInactiveIcon /> },
+        { name: "Portfolio", href: "/portfolio", activeIcon: <PortfolioActiveIcon />, inactiveIcon: <PortfolioInactiveIcon /> },
+        { name: "Markets", href: "/markets", activeIcon: <LeaderboardActiveIcon />, inactiveIcon: <LeaderboardInactiveIcon /> },
+      ]
+    },
     mainNavProps: {
       initialMenu: "/",
       mainMenus: [
@@ -55,7 +71,7 @@ const config: OrderlyConfig = {
       discordUrl: "https://discord.com/invite/orderlynetwork",
       twitterUrl: "https://twitter.com/OrderlyNetwork",
       trailing: <span className="oui-text-2xs oui-text-base-contrast-54">Charts powered by <a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a></span>
-    },
+    }
   },
   orderlyAppProvider: {
     appIcons: {

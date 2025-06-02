@@ -8,6 +8,7 @@ export default function PerpPage() {
 
   return (
     <Scaffold
+      bottomNavProps={config.scaffold.bottomNavProps}
       mainNavProps={config.scaffold.mainNavProps}
       footerProps={config.scaffold.footerProps}
       routerAdapter={{

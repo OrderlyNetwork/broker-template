@@ -24,6 +24,7 @@ export default function PortfolioLayout() {
         ...config.scaffold.mainNavProps,
         initialMenu: "/portfolio",
       }}
+      bottomNavProps={config.scaffold.bottomNavProps}
       routerAdapter={{
         onRouteChange,
       }}

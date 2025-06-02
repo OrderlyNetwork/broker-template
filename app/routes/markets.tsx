@@ -13,6 +13,7 @@ export default function MarketsPage() {
         initialMenu: "/markets",
       }}
       footerProps={config.scaffold.footerProps}
+      bottomNavProps={config.scaffold.bottomNavProps}
       routerAdapter={{
         onRouteChange,
       }}

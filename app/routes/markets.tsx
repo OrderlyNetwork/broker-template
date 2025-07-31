@@ -16,6 +16,7 @@ export default function MarketsPage() {
       routerAdapter={{
         onRouteChange,
       }}
+      bottomNavProps={config.scaffold.bottomNavProps}
     >
       <Outlet />
     </Scaffold>

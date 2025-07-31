@@ -3,16 +3,18 @@ import { Scaffold } from "@orderly.network/ui-scaffold";
 import config from "@/utils/config";
 import { useNav } from "@/hooks/useNav";
 
-export default function PerpPage() {
+export default function LeaderboardPage() {
   const { onRouteChange } = useNav();
 
   return (
     <Scaffold
-      mainNavProps={config.scaffold.mainNavProps}
+      mainNavProps={{
+        ...config.scaffold.mainNavProps,
+        initialMenu: "/leaderboard",
+      }}
       footerProps={config.scaffold.footerProps}
       routerAdapter={{
         onRouteChange,
-        currentPath: "/",
       }}
       bottomNavProps={config.scaffold.bottomNavProps}
     >

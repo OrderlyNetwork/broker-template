@@ -30,6 +30,7 @@ export default function PortfolioLayout() {
       leftSideProps={{
         current: currentPath,
       }}
+      bottomNavProps={config.scaffold.bottomNavProps}
     >
       <Outlet />
     </PortfolioLayoutWidget>

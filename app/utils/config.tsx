@@ -1,7 +1,8 @@
 import { TradingPageProps } from "@orderly.network/trading";
-import { FooterProps, MainNavWidgetProps } from "@orderly.network/ui-scaffold";
+import { BottomNavProps, FooterProps, MainNavWidgetProps } from "@orderly.network/ui-scaffold";
 import { AppLogos } from "@orderly.network/react-app";
 import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/orderly";
+import { LeaderboardActiveIcon, LeaderboardInactiveIcon, MarketsActiveIcon, MarketsInactiveIcon, PortfolioActiveIcon, PortfolioInactiveIcon, TradingActiveIcon, TradingInactiveIcon } from "@orderly.network/ui";
 
 export type OrderlyConfig = {
   orderlyAppProvider: {
@@ -10,6 +11,7 @@ export type OrderlyConfig = {
   scaffold: {
     mainNavProps: MainNavWidgetProps;
     footerProps: FooterProps;
+    bottomNavProps: BottomNavProps;
   };
   tradingPage: {
     tradingViewConfig: TradingPageProps["tradingViewConfig"];
@@ -25,6 +27,7 @@ const config: OrderlyConfig = {
         { name: "Trading", href: "/" },
         { name: "Portfolio", href: "/portfolio" },
         { name: "Markets", href: "/markets" },
+        { name: "Leaderboard", href: "/leaderboard" },
       ],
       campaigns: {
         name: "Reward",
@@ -49,6 +52,14 @@ const config: OrderlyConfig = {
           },
         ],
       },
+    },
+    bottomNavProps: {
+      mainMenus: [
+        { name: "Trading", href: "/", activeIcon: <TradingActiveIcon />, inactiveIcon: <TradingInactiveIcon /> },
+        { name: "Portfolio", href: "/portfolio", activeIcon: <PortfolioActiveIcon />, inactiveIcon: <PortfolioInactiveIcon /> },
+        { name: "Markets", href: "/markets", activeIcon: <MarketsActiveIcon />, inactiveIcon: <MarketsInactiveIcon /> },
+        { name: "Leaderboard", href: "/leaderboard", activeIcon: <LeaderboardActiveIcon />, inactiveIcon: <LeaderboardInactiveIcon /> },
+      ],
     },
     footerProps: {
       telegramUrl: "https://orderly.network",
